@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118104606) do
+ActiveRecord::Schema.define(:version => 20121119121543) do
 
   create_table "proposals", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120118104606) do
     t.datetime "updated_at"
     t.string   "rmas_id"
     t.text     "description"
+    t.boolean  "ethics_approved", :default => false
   end
 
 end
