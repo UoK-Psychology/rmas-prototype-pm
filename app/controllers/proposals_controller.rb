@@ -2,7 +2,14 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
   def index
-    @proposals = Proposal.all
+
+    if params.has_key?(:rmas_id)
+      logger.info('got rmas_id')
+      @proposals = Proposal.where("rmas_id = ?" , params[:rmas_id])
+    else
+      logger.info('no rmas_id')
+      @proposals = Proposal.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
