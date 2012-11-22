@@ -90,8 +90,6 @@ class Proposal < ActiveRecord::Base
 
 		message['message_id'] = generate_rmas_id()
 
-    a_title = "does this work?"
-
     xml_message = "<?xml version='1.0' encoding='UTF-8'?> 
     <rmas>
     	<message-type>Proposal-created</message-type><!-- RMAS message type -->
