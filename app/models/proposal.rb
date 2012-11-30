@@ -92,7 +92,7 @@ class Proposal < ActiveRecord::Base
 
     xml_message = "<?xml version='1.0' encoding='UTF-8'?> 
     <rmas>
-    	<message-type>Proposal-created</message-type><!-- RMAS message type -->
+    	<message-type>proposal-created</message-type><!-- RMAS message type -->
     	<!-- CERIF payload -->
     	<CERIF
     		xmlns='urn:xmlns:org:eurocris:cerif-1.4-0' 
@@ -103,7 +103,7 @@ class Proposal < ActiveRecord::Base
     		sourceDatabase='pFact'> 
     		<!-- Base project entity -->
     		<cfProj>
-    			<cfProjId>urn:rmas:0078:pfact:2.02:UUID</cfProjId> <!-- RMAS identifier --> 
+    			<cfProjId>#{self.rmas_id}</cfProjId> <!-- RMAS identifier --> 
     			<cfStartDate>2010-01-01</cfStartDate> <!-- Project start --> 
     			<cfEndDate>2012-07-31</cfEndDate> <!-- Project end --> 
     			<cfAcro>RMAS</cfAcro> <!-- Project acronym -->
