@@ -15,7 +15,8 @@
 	<%= simple_format @proposal.description %>
 
 	<div class='well show-well'>
-		<strong>RMAS ID:</strong> <code><%= @proposal.rmas_id %></code>
+		<strong>RMAS ID:</strong> <code><%= @proposal.rmas_id %></code></br>
+		<strong>Ethics Approved:</strong> <%= @proposal.ethics_approved %>
 	</div>
 
 	<div class='links'>
