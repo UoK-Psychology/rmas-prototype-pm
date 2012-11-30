@@ -10,6 +10,7 @@
         <th>Description</th>
         <th style='width: 10%'></th>
         <th style='width: 10%'></th>
+		<th style='width: 5%'>Ethics?</th>
       </tr>
 
     <% @proposals.each do |proposal| %>
@@ -18,6 +19,7 @@
         <td><%= truncate proposal.description, :length => 60, :separator => ' ' %></td>
         <td><%= link_to 'Edit', edit_proposal_path(proposal), :class => 'btn' %></td>
         <td><%= link_to 'Delete', proposal, confirm: 'Are you sure?', method: :delete, :class => 'btn danger' %></td>
+		<td><%if proposal.ethics_approved == true%><%= image_tag "tick.png" %><% end %></td>
       </tr>
     <% end %>
     </table>
